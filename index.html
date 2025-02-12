@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            background: linear-gradient(to right, #4a1d96, #312e81);
+            background-size: 400% 400%;
+            background-attachment: fixed;
+        }
+        /* Add smooth transition for navbar */
+        #navbar-links {
+            transition: max-height 0.3s ease-out, opacity 0.3s ease-out;
+            max-height: 0;
+            opacity: 0;
+            overflow: hidden;
+        }
+        #navbar-links.show {
+            max-height: 300px; /* Adjust this value based on your content */
+            opacity: 1;
+        }
+        /* Ensure navbar links are visible on larger screens */
+        @media (min-width: 1024px) {
+            #navbar-links {
+                max-height: none;
+                opacity: 1;
+                overflow: visible;
+            }
+        }
+    </style>
+</head>
+<body class="text-white">
+    <header class="fixed top-0 left-0 right-0 z-50 mt-4 flex justify-center">
+        <div class="w-11/12 bg-gradient-to-r from-purple-800 to-indigo-900 shadow-2xl rounded-full">
+            <div class="container mx-auto px-6 py-6">
+                <nav class="flex flex-wrap justify-between items-center">
+                    <h1 class="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-pink-400 to-yellow-300">My Portfolio</h1>
+                    <button id="navbar-toggler" class="lg:hidden text-white focus:outline-none hover:text-yellow-300 transition-colors duration-300">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                    <ul id="navbar-links" class="lg:flex lg:space-x-8 w-full lg:w-auto mt-4 lg:mt-0">
+                        <li><a href="#about" class="block lg:inline-block text-white hover:text-yellow-300 transition duration-300 smooth-scroll py-2 px-4 rounded-full hover:bg-purple-700"><i class="fas fa-home mr-2"></i>Home</a></li>
+                        <li><a href="#projects" class="block lg:inline-block text-white hover:text-yellow-300 transition duration-300 smooth-scroll py-2 px-4 rounded-full hover:bg-purple-700"><i class="fas fa-project-diagram mr-2"></i>Projects</a></li>
+                        <li><a href="#skills" class="block lg:inline-block text-white hover:text-yellow-300 transition duration-300 smooth-scroll py-2 px-4 rounded-full hover:bg-purple-700"><i class="fas fa-cogs mr-2"></i>Skills</a></li>
+                        <li><a href="#contact" class="block lg:inline-block text-white hover:text-yellow-300 transition duration-300 smooth-scroll py-2 px-4 rounded-full hover:bg-purple-700"><i class="fas fa-envelope mr-2"></i>Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <main class="container mx-auto px-8 py-12">
+        <section id="about" class="mb-16 bg-gradient-to-br from-purple-900 to-indigo-800 p-8 rounded-lg shadow-2xl mt-24 transform hover:scale-105 transition-all duration-300">
+            <h2 class="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-pink-400 to-yellow-300 mb-6 animate-pulse">About Me</h2>
+            <p class="text-white text-lg leading-relaxed font-semibold backdrop-blur-sm bg-white bg-opacity-10 p-4 rounded-lg shadow-inner">
+                I am a <span class="text-yellow-300">passionate developer</span> with experience in building <span class="text-blue-300">web applications</span> using <span class="text-green-300">modern technologies</span>. I love to <span class="text-pink-300">learn</span> and <span class="text-purple-300">explore</span> new things in the tech world.
+            </p>
+        </section>
+        <section id="projects" class="mb-16">
+            <h2 class="text-3xl font-bold text-white mb-12 text-center">Projects</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+                <div class="bg-gradient-to-br from-purple-600 to-blue-500 rounded-lg shadow-xl overflow-hidden transform hover:scale-105 transition-all duration-300 hover:shadow-2xl">
+                    <img src="https://picsum.photos/400/300" alt="Project Image" class="w-full h-56 object-cover hover:opacity-80 transition-opacity duration-300">
+                    <div class="p-8">
+                        <h3 class="text-2xl font-bold text-white mb-4">TaskMaster Pro</h3>
+                        <p class="text-gray-100">A comprehensive task management application with real-time collaboration features and intuitive UI.</p>
+                    </div>
+                </div>
+                <div class="bg-gradient-to-br from-pink-500 to-orange-400 rounded-lg shadow-xl overflow-hidden transform hover:scale-105 transition-all duration-300 hover:shadow-2xl">
+                    <img src="https://picsum.photos/400/400" alt="Project Image" class="w-full h-56 object-cover hover:opacity-80 transition-opacity duration-300">
+                    <div class="p-8">
+                        <h3 class="text-2xl font-bold text-white mb-4">EcoTrack</h3>
+                        <p class="text-gray-100">An innovative mobile app that helps users track and reduce their carbon footprint through personalized recommendations.</p>
+                    </div>
+                </div>
+                <div class="bg-gradient-to-br from-green-400 to-blue-500 rounded-lg shadow-xl overflow-hidden transform hover:scale-105 transition-all duration-300 hover:shadow-2xl">
+                    <img src="https://picsum.photos/400/500" alt="Project Image" class="w-full h-56 object-cover hover:opacity-80 transition-opacity duration-300">
+                    <div class="p-8">
+                        <h3 class="text-2xl font-bold text-white mb-4">CodeMentor AI</h3>
+                        <p class="text-gray-100">An AI-powered platform that provides personalized coding tutorials and real-time assistance for developers of all skill levels.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="skills" class="mb-16">
+            <h2 class="text-3xl font-bold text-center text-white mb-12">Skills</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+                <div class="bg-gradient-to-br from-purple-600 to-blue-500 rounded-lg shadow-lg p-8 transform hover:scale-105 transition-all duration-300 hover:shadow-2xl">
+                    <i class="fas fa-code text-5xl text-white mb-6 animate-pulse"></i>
+                    <h3 class="text-2xl font-bold text-white mb-4">HTML</h3>
+                    <p class="text-gray-100">Experienced in creating semantic and accessible HTML structures.</p>
+                </div>
+                <div class="bg-gradient-to-br from-pink-500 to-orange-400 rounded-lg shadow-lg p-8 transform hover:scale-105 transition-all duration-300 hover:shadow-2xl">
+                    <i class="fas fa-paint-brush text-5xl text-white mb-6 animate-pulse"></i>
+                    <h3 class="text-2xl font-bold text-white mb-4">CSS</h3>
+                    <p class="text-gray-100">Proficient in writing clean and responsive CSS using modern techniques like Flexbox and Grid.</p>
+                </div>
+                <div class="bg-gradient-to-br from-yellow-400 to-red-500 rounded-lg shadow-lg p-8 transform hover:scale-105 transition-all duration-300 hover:shadow-2xl">
+                    <i class="fab fa-js text-5xl text-white mb-6 animate-pulse"></i>
+                    <h3 class="text-2xl font-bold text-white mb-4">JavaScript</h3>
+                    <p class="text-gray-100">Skilled in writing efficient and maintainable JavaScript code.</p>
+                </div>
+                <div class="bg-gradient-to-br from-green-400 to-blue-500 rounded-lg shadow-lg p-8 transform hover:scale-105 transition-all duration-300 hover:shadow-2xl">
+                    <i class="fab fa-react text-5xl text-white mb-6 animate-pulse"></i>
+                    <h3 class="text-2xl font-bold text-white mb-4">React</h3>
+                    <p class="text-gray-100">Experienced in building dynamic and interactive user interfaces with React.</p>
+                </div>
+                <div class="bg-gradient-to-br from-indigo-500 to-purple-500 rounded-lg shadow-lg p-8 transform hover:scale-105 transition-all duration-300 hover:shadow-2xl">
+                    <i class="fas fa-wind text-5xl text-white mb-6 animate-pulse"></i>
+                    <h3 class="text-2xl font-bold text-white mb-4">Tailwind CSS</h3>
+                    <p class="text-gray-100">Proficient in using Tailwind CSS to rapidly build custom designs.</p>
+                </div>
+                <div class="bg-gradient-to-br from-red-500 to-pink-500 rounded-lg shadow-lg p-8 transform hover:scale-105 transition-all duration-300 hover:shadow-2xl">
+                    <i class="fab fa-git-alt text-5xl text-white mb-6 animate-pulse"></i>
+                    <h3 class="text-2xl font-bold text-white mb-4">Git</h3>
+                    <p class="text-gray-100">Experienced in version control using Git and GitHub.</p>
+                </div>
+            </div>
+        </section>
+        <section id="contact" class="mb-16 bg-black bg-opacity-50 rounded-lg shadow-lg p-10">
+            <h2 class="text-3xl font-bold text-white mb-8">Get in Touch</h2>
+            <form action="mailto:example@example.com" method="post" enctype="text/plain" class="space-y-8">
+                <div class="relative">
+                    <input type="text" id="name" name="name" class="w-full px-5 py-4 bg-white bg-opacity-20 rounded-lg text-white placeholder-white placeholder-opacity-70 focus:outline-none focus:ring-2 focus:ring-white" required placeholder="Your Name">
+                    <label for="name" class="absolute left-5 top-4 text-white text-opacity-70 transition-all duration-300 pointer-events-none transform -translate-y-7 scale-75 origin-left">Name</label>
+                </div>
+                <div class="relative">
+                    <input type="email" id="email" name="email" class="w-full px-5 py-4 bg-white bg-opacity-20 rounded-lg text-white placeholder-white placeholder-opacity-70 focus:outline-none focus:ring-2 focus:ring-white" required placeholder="Your Email">
+                    <label for="email" class="absolute left-5 top-4 text-white text-opacity-70 transition-all duration-300 pointer-events-none transform -translate-y-7 scale-75 origin-left">Email</label>
+                </div>
+                <div class="relative">
+                    <textarea id="message" name="message" class="w-full px-5 py-4 bg-white bg-opacity-20 rounded-lg text-white placeholder-white placeholder-opacity-70 focus:outline-none focus:ring-2 focus:ring-white" rows="5" required placeholder="Your Message"></textarea>
+                    <label for="message" class="absolute left-5 top-4 text-white text-opacity-70 transition-all duration-300 pointer-events-none transform -translate-y-7 scale-75 origin-left">Message</label>
+                </div>
+                <button type="submit" class="w-full bg-gradient-to-r from-purple-600 to-pink-500 text-white font-bold py-4 px-8 rounded-lg transition duration-300 transform hover:scale-105 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-purple-600 focus:ring-opacity-50 animate-pulse">
+                    <span class="flex items-center justify-center">
+                        <span class="mr-2">Send Message</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 inline-block" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                        </svg>
+                    </span>
+                </button>
+            </form>
+        </section>
+    </main>
+    <footer class="bg-black bg-opacity-50 text-white shadow-lg mt-8 fixed bottom-0 w-full">
+        <div class="container mx-auto px-8 py-6 flex justify-between items-center">
+            <p class="text-sm">&copy; 2023 My Portfolio. All rights reserved.</p>
+            <div class="flex space-x-4">
+                <a href="#" class="hover:text-gray-300 transition duration-300">
+                    <i class="fab fa-github text-xl"></i>
+                </a>
+                <a href="#" class="hover:text-gray-300 transition duration-300">
+                    <i class="fab fa-linkedin text-xl"></i>
+                </a>
+                <a href="#" class="hover:text-gray-300 transition duration-300">
+                    <i class="fab fa-twitter text-xl"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const navbarToggler = document.getElementById('navbar-toggler');
+            const navbarLinks = document.getElementById('navbar-links');
+            navbarToggler.addEventListener('click', () => {
+                navbarLinks.classList.toggle('show');
+                if (navbarLinks.classList.contains('show')) {
+                    navbarToggler.innerHTML = '<i class="fas fa-times"></i>';
+                } else {
+                    navbarToggler.innerHTML = '<i class="fas fa-bars"></i>';
+                }
+            });
+            // Add smooth scrolling to all links with the 'smooth-scroll' class
+            document.querySelectorAll('.smooth-scroll').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                    // Close the mobile menu after clicking a link
+                    if (navbarLinks.classList.contains('show')) {
+                        navbarLinks.classList.remove('show');
+                        navbarToggler.innerHTML = '<i class="fas fa-bars"></i>';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
